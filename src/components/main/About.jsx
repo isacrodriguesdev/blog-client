@@ -13,7 +13,7 @@ export default function (props) {
                <div className="owner-blog-perfil">
                   <input type="file" id="up-photo-admin" hidden />
                   <label htmlFor="up-photo-admin">
-                     <img src="https://blog-saude-server.herokuapp.com/photo/admin_primary.jpg" />
+                     <img src="https://blog-saude-server.herokuapp.com/avatar/admin_primary.jpg" />
                   </label>
                </div>
 
