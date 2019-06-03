@@ -18,7 +18,7 @@ const actions = {...post}
 class Main extends Component {
 
    componentWillMount() {
-      this.props.getPosts(this.props.options)
+      this.props.getPosts()
    }
 
    posts() {

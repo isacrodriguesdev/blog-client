@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
-import {Creators as post} from '../../store/user/post'
+import { Creators as post } from '../../store/user/post'
 
-const actions = {...post}
+const actions = { ...post }
 
 class Search extends Component {
 
@@ -15,9 +15,9 @@ class Search extends Component {
    }
 
    submit(data) {
-      if(this.state.category != undefined) 
+      if (this.state.category != undefined)
          data.category = this.state.category
-      
+
       this.props.searchPost(data.keyword)
       this.props.resetSearch()
    }
@@ -27,15 +27,15 @@ class Search extends Component {
       this.props.loadCategory(e.target.dataset.option)
 
       this.refs.category.innerHTML = e.target.innerHTML
-      this.setState({option: e.target.dataset.option, OPENED_LIST:false})
+      this.setState({ option: e.target.dataset.option, OPENED_LIST: false })
 
    }
 
    openList(e) {
       e.stopPropagation()
-      if (this.state.OPENED_LIST === false) 
+      if (this.state.OPENED_LIST === false)
          this.setState({ OPENED_LIST: true })
-      else 
+      else
          this.setState({ OPENED_LIST: false })
    }
 
@@ -45,10 +45,24 @@ class Search extends Component {
       const { handleSubmit } = this.props
 
       return (
-         <div className="search-select">
+         <Fragment>
 
-            <div className="select" onClick={this.openList.bind(this)}>
-               <span ref="category">Todos</span> <i className="fas fa-caret-down"></i>
+            <div className="search-select">
+
+               <div className="select" onClick={this.openList.bind(this)}>
+                  <span ref="category">Todos</span> <i className="fas fa-caret-down"></i>
+               </div>
+
+               <div className="search">
+                  <form onSubmit={handleSubmit(this.submit.bind(this))}>
+                     <Field type="text" placeholder="Faça uma pesquisa..."
+                        name="keyword"
+                        component="input"
+                     />
+                     <button><i className="fas fa-search"></i></button>
+                  </form>
+               </div>
+
             </div>
 
             <div className="select-list" style={{
@@ -58,25 +72,15 @@ class Search extends Component {
                   <li data-option="">Todos</li>
                   <li data-option="Notícia">Notícia</li>
                   <li data-option="Esporte">Esporte</li>
+                  <li data-option="Saúde">Saúde</li>
+                  <li data-option="Renda Extra">Renda Extra</li>
                   <li data-option="Cursos">Cursos</li>
                   <li data-option="Idiomas">Idiomas</li>
                   <li data-option="Beleza">Beleza</li>
                   <li data-option="Culinária">Culinária</li>
                </ul>
             </div>
-
-            <div className="search">
-               <form onSubmit={handleSubmit(this.submit.bind(this))}>
-                  <Field type="text" placeholder="Faça uma pesquisa..."
-                     name="keyword"
-                     component="input"
-                  />
-                  <button><i className="fas fa-search"></i></button>
-               </form>
-            </div>
-
-
-         </div>
+         </Fragment>
       )
    }
 }

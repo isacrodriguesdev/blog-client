@@ -285,7 +285,7 @@
    background-color: white;
    border-radius: 4px;
    padding: 10px 20px !important;
-   margin-top: 178px !important;
+   // margin-top: 178px !important;
    width: unset !important;
    max-width: 160px !important;
    min-width: 160px !important;
@@ -298,6 +298,7 @@
    -moz-user-select: none;
    -ms-user-select: none;
    user-select: none;
+   height: auto !important;
    ul li {
       font-family: 'Poppins', sans-serif;
       color: rgb(112, 112, 112);

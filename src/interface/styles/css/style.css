@@ -909,7 +909,6 @@ font-family: 'Jura', sans-serif;
     background-color: white;
     border-radius: 4px;
     padding: 10px 20px !important;
-    margin-top: 178px !important;
     width: unset !important;
     max-width: 160px !important;
     min-width: 160px !important;
@@ -922,6 +921,7 @@ font-family: 'Jura', sans-serif;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    height: auto !important;
   }
   .select-list-post-add ul li {
     font-family: "Poppins", sans-serif;
@@ -1332,33 +1332,6 @@ font-family: 'Jura', sans-serif;
   width: 100%;
   height: 100%;
 }
-.search-select .select-list {
-  position: absolute;
-  background-color: white;
-  border-radius: 1px;
-  padding: 15px 25px;
-  margin-top: 240px;
-  width: 100%;
-  border: 1px solid #dadada;
-  box-shadow: 1px 1px 5px rgba(139, 139, 139, 0.384);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.search-select .select-list ul li {
-  font-family: "Poppins", sans-serif;
-  color: #707070;
-  cursor: pointer;
-  padding: 12px 0px;
-  font-size: 0.99em;
-}
-.search-select .select-list ul li:hover {
-  transition-duration: 0.3s;
-  color: #9c6afa;
-}
 .search-select .select {
   display: flex;
   justify-content: space-between;
@@ -1413,6 +1386,34 @@ font-family: 'Jura', sans-serif;
   margin: 5px auto;
 }
 
+.select-list {
+  position: absolute;
+  background-color: white;
+  border-radius: 1px;
+  padding: 15px 25px;
+  margin-top: 148px !important;
+  width: 100%;
+  border: 1px solid #dadada;
+  box-shadow: 1px 1px 5px rgba(139, 139, 139, 0.384);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.select-list ul li {
+  font-family: "Poppins", sans-serif;
+  color: #707070;
+  cursor: pointer;
+  padding: 12px 0px;
+  font-size: 0.99em;
+}
+.select-list ul li:hover {
+  transition-duration: 0.3s;
+  color: #9c6afa;
+}
+
 @media screen and (min-width: 600px) {
   .search-select {
     display: flex;
@@ -1461,7 +1462,7 @@ font-family: 'Jura', sans-serif;
     background-color: white;
     border-radius: 4px;
     padding: 10px 20px !important;
-    margin-top: 46px !important;
+    margin-top: 87px !important;
     width: unset !important;
     left: 5%;
     max-width: 180px !important;

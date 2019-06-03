@@ -28,22 +28,22 @@ class CreatePost extends Component { // Componente administrativo
          },
          toggleCategory: false,
          errors: {},
-         category:  "",
+         category: "",
       }
       this.state = this.initialState
    }
 
    async addPost(data) {
-      if(this.state.image.file)
+      if (this.state.image.file)
          data.file = this.state.image.file
-      if(this.state.category)
+      if (this.state.category)
          data.category = this.state.category
-      
+
       const errors = await validate(data)
-      
+
       if (Object.keys(errors).length > 0)
-      return this.setState({ errors })
-      
+         return this.setState({ errors })
+
       data.date = date()
       data.time = time()
 
@@ -52,13 +52,13 @@ class CreatePost extends Component { // Componente administrativo
    }
 
    async updatePost(data) {
-      if(this.state.image.file)
+      if (this.state.image.file)
          data.file = this.state.image.file
-      if(this.state.category)
+      if (this.state.category)
          data.category = this.state.category
-      
+
       const errors = await validate(data)
-      
+
       if (Object.keys(errors).length > 0)
          return this.setState({ errors })
 
@@ -72,7 +72,7 @@ class CreatePost extends Component { // Componente administrativo
       this.refs.errorImageType.innerHTML = ""
       this.refs.loadRun.style.width = "0%"
 
-      await this.setState({image: {file: e.target.files[0]}})
+      await this.setState({ image: { file: e.target.files[0] } })
 
       if (!this.state.image.file.type.includes('image/'))
          return this.refs.errorImageType.innerHTML = "Envie apenas imagem"
@@ -136,7 +136,7 @@ class CreatePost extends Component { // Componente administrativo
             {/* CARD ADMIN */}
             <Card />
 
-            <form>
+            <form ref="form">
 
                <input type="file" id="upload-file"
                   name="file"
@@ -148,12 +148,12 @@ class CreatePost extends Component { // Componente administrativo
                <div id="post-banner">
                   <label htmlFor="upload-file">
 
-                     <Mount 
+                     <Mount
                         render={this.state.image.url || this.props.poster.image}>
                         <img src={this.state.image.url || this.props.poster.image} />
                      </Mount>
 
-                     <Mount 
+                     <Mount
                         render={!this.state.image.url && !this.props.poster.image}>
                         <img src={iconPicture} style={{ objectFit: "cover", width: "max-content", height: "max-content" }} />
                         <span>Selecione uma imagem</span>
@@ -197,26 +197,28 @@ class CreatePost extends Component { // Componente administrativo
                         component="input"
                      />
 
-                     <div className="select-add-post" 
+                     <div className="select-add-post"
                         onClick={this.openList.bind(this)}>
                         <span ref="categorypost">
-                           { !this.props.poster.category ? "Categorias" : this.props.poster.category}
-                           </span> <i className="fas fa-caret-down"></i>
+                           {!this.props.poster.category ? "Categorias" : this.props.poster.category}
+                        </span> <i className="fas fa-caret-down"></i>
                      </div>
+                  </div>
 
-                     <div className="select-list-post-add" style={{
+                  <div className="select-list-post-add" style={{
                         display: this.state.toggleCategory ? "block" : "none"
                      }}>
                         <ul id="options" onClick={this.select.bind(this)}>
                            <li data-option="Notícia">Notícia</li>
                            <li data-option="Esporte">Esporte</li>
+                           <li data-option="Saúde">Saúde</li>
+                           <li data-option="Renda Extra">Renda Extra</li>
                            <li data-option="Cursos">Cursos</li>
                            <li data-option="Idiomas">Idiomas</li>
                            <li data-option="Beleza">Beleza</li>
                            <li data-option="Culinária">Culinária</li>
                         </ul>
                      </div>
-                  </div>
 
                   <span className="warn-invalid-input">{this.state.errors.link}</span>
 
@@ -230,23 +232,24 @@ class CreatePost extends Component { // Componente administrativo
 
                      <p className="post-warn">{this.state.errors.category}</p>
 
-                     <Mount render={!this.props.poster.id}>
-                        <button className="post-btn-add" onClick={
-                           handleSubmit(this.addPost.bind(this))}>
-                           <i className="fas fa-plus"></i> Adicionar</button>
-                     </Mount>
+                     <div>
+                        <Mount render={!this.props.poster.id}>
+                           <button className="post-btn-add" onClick={
+                              handleSubmit(this.addPost.bind(this))}>
+                              <i className="fas fa-plus"></i> Adicionar</button>
+                        </Mount>
+                        <Mount render={this.props.poster.id}>
+                           <button className="post-btn-add"
+                              onClick={this.cancelUpdate.bind(this)}>
+                              <i className="fas fa-plus"></i> Cancelar</button>
+                        </Mount>
 
-                     <Mount render={this.props.poster.id}>
-                        <button className="post-btn-add" 
-                           onClick={this.cancelUpdate.bind(this)}>
-                           <i className="fas fa-plus"></i> Cancelar</button>
-                     </Mount>
-
-                     <Mount render={this.props.poster.id}>
-                        <button className="post-btn-add" onClick={
-                           handleSubmit(this.updatePost.bind(this))}>
-                           <i className="fas fa-plus"></i> Alterar</button>
-                     </Mount>                     
+                        <Mount render={this.props.poster.id}>
+                           <button className="post-btn-add" onClick={
+                              handleSubmit(this.updatePost.bind(this))}>
+                              <i className="fas fa-plus"></i> Alterar</button>
+                        </Mount>
+                     </div>
 
                   </div>
                </div>
@@ -269,7 +272,7 @@ const mapStateToProps = (state) => {
    }
 }
 
-CreatePost = reduxForm({ 
+CreatePost = reduxForm({
    form: "PostForm",
    enableReinitialize: true,
 

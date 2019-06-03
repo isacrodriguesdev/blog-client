@@ -34,7 +34,7 @@ const Types = {
 
 export const Creators = {
 
-   getPosts: ({ pages = initialState.options.pages, category = "", search = "" }) => {
+   getPosts: ({pages,category,search} = initialState.options) => {
 
       return (dispatch, getState) => {
          axios.get(`/post?category=${category}&search=${search}&pages=${pages}`)
