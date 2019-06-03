@@ -1,0 +1,195 @@
+$post-space-top: 25px; 
+
+.posts-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   #title-posts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .posts {
+      width: 100%;
+   }
+}
+
+.post-article {   
+   margin-top: $post-space-top;
+   margin-bottom: 50px;
+   box-shadow: 0px 0px 10px rgb(224, 224, 224);
+   border-radius: 3px;
+   background: white;
+}
+
+.post {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   padding: 10px;
+   width: 100%;
+   
+   .post-stream {
+      height: 10em;
+      img {
+         width: 100%;
+         height: 10em;
+         object-fit: cover;
+         border-radius: 2px;
+      }
+   }
+   .post-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0px 10px 0px 10px;
+      width: 100%;
+
+      .txt-1 {
+         margin-bottom: 20px;
+         h4 {
+            font-size: 1.15em;
+            color: rgb(95, 95, 95);
+            margin: 10px 0px;
+            margin-bottom: 10px;
+            font-family: 'Comfortaa', cursive;
+            word-break: break-word;
+         }
+         p {
+            word-break: break-word;
+            text-align: justify;
+            font-size: 1.1em;
+            font-weight: 400;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(66, 66, 66);
+   
+         }
+      }
+      .txt-2 {
+         // display: flex;
+         // flex-direction: row;
+         // justify-content: space-between;
+         font-family: 'Baloo Bhai', cursive;
+         p {
+            color: rgb(95, 95, 95);
+            span {
+               color: rgb(94, 94, 94);
+               font-size: .9em;
+            }
+         }
+         font-family: 'Kodchasan', sans-serif;
+      }
+   }
+}
+
+.post-fotter {
+   margin-top: 35px;
+   margin-bottom: 5px;
+   display: flex;
+   justify-content: space-between;
+   justify-items: flex-end;
+
+   .category-color {
+      padding: 4px 9px;
+      border-radius: 2px;
+      text-align: center;
+      width: max-content;
+      height: max-content;
+      font-family: Quicksand, sans-serif
+   }
+   span {
+      color: white;
+      font-size: 0.92em
+   }
+
+   button[type-button="open-link"] {
+      padding: 9px 12px;
+      border: none;
+      border-radius: 2px;
+      margin-left: 11px;
+      cursor: pointer;
+      color: white;
+      background: $theme-color;
+      font-family: 'Inconsolata', monospace;
+      font-size: 0.98em;
+      box-shadow: 2px 2px 5px rgba(126, 126, 126, 0.507);
+   }
+   
+}
+
+.social-icons-post {
+   @include social-icons(30px, 10px, 0px);
+   height: 100%;
+   button {border: none;}
+}
+
+// ================================================
+// --------------- DESKTOP ------------------------
+// ================================================
+// ================================================
+// --------------- DESKTOP ------------------------
+// ================================================
+
+@media screen and (min-width: 600px)
+{
+
+   .social-icons-post {
+      @include social-icons(27px, 8px, 0px);
+   }
+
+.posts-container {
+   margin: initial; //
+   margin-left: 5%;
+   width: (100% - 20) !important; //
+
+   select {
+      margin-right: $space; // 
+      float: right;
+   }
+   #title-posts {
+      align-items: unset; //
+      margin-left: $space; //
+   }
+}
+.post-article {   
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   height: 100%;
+   width: 100%;
+   width: unset;
+   margin-top: $post-space-top;
+   margin-bottom: $space; //
+   border-radius: 3px;
+}
+.post {
+   display: flex;
+   justify-content: unset !important;
+   flex-direction: row;
+   padding: 10px;
+   width: 100%;
+}
+.post-stream {
+   margin: unset !important;
+   margin-right: 10px !important;
+   img {
+      width: 18em !important;
+      height: 11em !important;
+   }
+}
+
+.post-fotter {
+   margin-top: 20px;
+   margin-bottom: 5px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 100%;
+   
+}
+
+
+
+}

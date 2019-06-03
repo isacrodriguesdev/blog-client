@@ -1,0 +1,181 @@
+$search-shadow: 0px 1px 10px #e9e9e9;
+
+.search-select {
+   display: flex;
+   flex-direction: column-reverse;
+   justify-content: center;
+   margin: 40px 0px;
+   width: 100%;
+   height: auto;
+   // box-shadow: $search-shadow;
+
+   form {
+      display: flex;
+      width: 100%;
+      height: 100%;
+   }
+
+   .select-list {
+      position: absolute;
+      background-color: white;
+      border-radius: 1px;
+      padding: 15px 25px;
+      margin-top: 240px;
+      width: 100%;
+      border: 1px solid rgb(218, 218, 218);
+      box-shadow: 1px 1px 5px rgba(139, 139, 139, 0.384);
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      ul li {
+         font-family: 'Poppins', sans-serif;
+         color: rgb(112, 112, 112);
+         cursor: pointer;
+         padding: 12px 0px;
+         font-size: .99em;
+         &:hover {
+            transition-duration: .3s;
+            color: #9c6afa;
+         }
+      }
+   }
+
+
+   .select {
+      display: flex;
+      justify-content: space-between;
+      color: rgb(255, 255, 255);
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      font-size: 0.9em;
+      background-color: #7159c1de;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      i {
+         position: relative;
+         color: rgb(255, 255, 255);
+         float: right;
+         top: 3px;
+      }
+   }
+   .search {
+      width: 100% !important;
+      input {
+         width: 100%;
+         font-family: 'Poppins', sans-serif;
+         &:focus {box-shadow: none;}
+      }
+   }
+   button {
+      background-color: #7159c1de;
+      padding: 12px 18px !important;
+      border-radius: 2px;
+      width: 20%;
+   }
+   input {
+      width: 80%;
+      border: 1px solid rgb(233, 233, 233);
+      border-right: none;
+   }
+   .select, input, button {
+      padding: 12px;
+   }
+   .search {
+      width: 95% !important;
+   }
+   .search, .select {
+      width: 95%;
+      margin: 5px auto;
+   }
+}
+
+@media screen and (min-width: 600px) {
+
+   .search-select {
+
+      display: flex;
+      flex-direction: row;
+      margin: 40px 0px;
+      width: 75%;
+      height: auto;
+      box-shadow: $search-shadow;
+   
+      form {
+         display: flex;
+         width: 100%;
+         height: 100%;
+      }
+   
+      .search {
+         width: 100% !important;
+         margin: unset !important;
+         input {
+            font-family: 'Poppins', sans-serif;
+            &:focus {box-shadow: none;}
+         }
+      }
+      button {
+         background-color: #7159c1de;
+         padding: 12px 18px !important;
+         text-align: center;
+         width: unset;
+      }
+      input {
+         width: 250px;
+      }
+      .select, input, button {
+         margin: unset !important;
+         padding: 12px;
+      }
+      .select {
+         max-width: 180px !important;
+         min-width: 180px !important;
+         margin: unset !important;
+      }
+   }
+   
+   .select-list {
+      position: absolute;
+      background-color: white;
+      border-radius: 4px;
+      padding: 10px 20px !important;
+      margin-top: 46px !important;
+      width: unset !important;
+      left: 5%;
+      max-width: 180px !important;
+      min-width: 180px !important;
+      border: 1px solid rgb(233, 233, 233);
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      ul li {
+         font-family: 'Poppins', sans-serif;
+         color: rgb(112, 112, 112);
+         cursor: pointer;
+         padding: 12px 0px;
+         font-size: .99em;
+         &:hover {
+            transition-duration: .3s;
+            color: #9c6afa;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 780px) {
+
+   .search-select {
+      width: 100% !important;
+   }
+}

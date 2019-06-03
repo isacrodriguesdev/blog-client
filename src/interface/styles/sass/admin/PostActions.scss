@@ -1,0 +1,84 @@
+.post-actions {
+   margin-right: 2px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 15px 15px;
+   border-radius: 5px;
+
+   img {
+      width: 20px;
+      margin: 0px 5px;
+      cursor: pointer;
+   }
+
+   i {
+      margin-right: 0px;
+      font-size: 1.3em;
+      border: none;
+   }
+
+   button[func="delete"], button[func="edit"] {
+      text-align: center;
+      margin-left: 15px;
+      padding: 5px 12px;
+      border-radius: 2px;
+      color: white;
+      box-shadow: 2px 2px 8px rgb(202, 202, 202);
+      font-family: "Poppins", sans-serif;
+      i {margin-right: 2px;}
+      font-size: 0.9em;
+   }
+   
+   button[func="delete"] {
+      background-color: rgba(253, 121, 121, 0.945);
+   }
+   button[func="edit"] {
+      background-color: $theme-color !important;
+   }
+
+   .info {
+      margin: 0px auto 20px auto;
+   }
+   .btns {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+   }
+}
+
+.total-info-post {
+   background: linear-gradient(to left top, #7159c1de, #4363cede);
+   padding: 5px 10px;
+   border-radius: 3px;
+   width: max-content;
+   margin: 15px 0px;
+   p {
+      color: rgb(219, 219, 219);
+      span {
+         color: white;
+         font-size: 1.09em;
+      }
+   }
+}
+// *******************************/
+// *******************************/
+// @ Media Screen: Desktop 
+// *******************************/
+// *******************************/
+
+@media screen and (min-width: 600px) {
+
+   .info {
+      margin: 0px 0 20px 0 !important;
+   }
+   .btns {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+      justify-content: flex-start !important;
+   }
+   button[func="delete"], button[func="edit"] {
+      float: right;
+   }
+
+}

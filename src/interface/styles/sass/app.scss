@@ -1,0 +1,35 @@
+$theme-color-linear: linear-gradient(to left bottom, #7159c1f5, #4c7de7f5);
+$theme-color: #7159c1de;
+$page-left: 10%;
+$space: 2%;
+
+@mixin theme-color-linear($direction) {
+   background: linear-gradient($direction, #7159c1f5, #4c7de7f5);
+}
+
+@mixin social-icons($imgSize, $space, $left:10px) {
+   margin-right: $left;
+   img {
+      width: $imgSize;
+      margin: 0px $space;
+   }
+}
+
+@import './Default.scss';
+@import './Fonts.scss';
+@import './Posts.scss';
+@import './home/Header.scss';
+@import './home/Main.scss';
+@import './home/Contact.scss';
+@import './home/Footer.scss';
+
+@import './admin/Auth.scss';
+@import './admin/PostForm.scss';
+@import './admin/PostActions.scss';
+@import './admin/Card.scss';
+
+@import './items/About.scss';
+@import './items/Navigator.scss';
+@import './items/NotFount.scss';
+@import './items/Validations.scss';
+@import './items//Search.scss'

@@ -1,0 +1,84 @@
+#auth-admin {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(120deg, rgba(46, 131, 211, 0.918), rgba(111, 68, 230, 0.979));
+   #auth-content {
+      border: 1px solid rgb(216, 216, 216);
+      width: 98%;
+      padding: 15px 20px;
+      background-color: white;
+      border-radius: 3px;
+      #auth-title {
+         margin-bottom: 5px;
+         font-size: 1.3em;
+         color: rgb(78, 77, 77);
+      }
+      form {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         input {
+            padding: 12px 12px;
+            margin: 5px 0px;
+            border: 1px solid rgb(216, 216, 216);
+            width: 100%;
+            font-size: 1em;
+         }
+      }
+      #auth-footer {
+         display: flex;
+         justify-content: space-between;
+         p {
+            margin-top: 5px;
+            color: rgb(255, 0, 0);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85em;
+         }
+      }
+      #auth-btn {
+         text-align: center;
+         padding: 8px 25px;
+         border: none;
+         background-color: $theme-color;
+         border-radius: 2px;
+         color: white;
+         font-size: 0.92em;
+         box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.603);
+         font-family: 'Poppins', sans-serif;
+      }
+   }
+}
+
+#back-btn {
+   text-align: center;
+   padding: 10px 40px;
+   margin-top: 30px;
+   border: none;
+   background-color: rgb(255, 89, 166);
+   border-radius: 2px;
+   color: white;
+   font-size: 0.95em;
+   box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.603);
+   font-family: 'Poppins', sans-serif;
+}
+
+// *******************************/
+// *******************************/
+// @ Media Screen: Desktop 
+// *******************************/
+// *******************************/
+
+@media screen and (min-width: 600px) {
+
+   #auth-content {
+      border: 1px solid rgb(216, 216, 216);
+      width: 400px !important;
+      padding: 15px 20px;
+      background-color: white;
+      border-radius: 3px;
+   }
+}

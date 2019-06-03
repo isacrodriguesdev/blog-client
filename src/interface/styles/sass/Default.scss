@@ -1,0 +1,64 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html, body, #root {
+   height: 100%;
+   min-height: 100%;
+   width: 100%;
+   font-family: 'Abel', sans-serif;
+}
+
+li {
+   list-style: none !important;
+}
+a {
+   text-decoration: none !important;
+}
+i {border: none;}
+
+button {
+   background: transparent;
+   border: none;
+   outline: 0;
+   cursor: pointer;
+   border: none;
+   user-select: none;
+   -moz-user-select: none;
+}
+
+input, textarea {
+   outline: 0;
+   border: none;
+   &:focus {
+      box-shadow: 1px 1px 5px rgba(201, 201, 201, 0.507);
+      border-bottom: 1px solid rgba(113, 89, 193, 0.658) !important;
+   }
+}
+
+main {
+   padding-top: 45px;
+   padding-bottom: 45px;
+   width: 100%;
+}
+
+::-webkit-scrollbar {
+   width: 8px;
+}
+ 
+::-webkit-scrollbar-thumb {
+   -webkit-border-radius: 10px;
+   border-radius: 2px;
+   background: rgb(145, 144, 144);
+}
+
+.fa-phone {
+   transform: rotate(110deg);
+}
+.far, .fas {
+   color: white;
+   .black {
+      color: rgb(17, 17, 17);
+   }
+}
