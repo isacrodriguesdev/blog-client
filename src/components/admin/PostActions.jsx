@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { Creators as postActions } from '../../store/user/post'
 const actions = { ...postActions }
 
-
 class PostController extends Component {
    
    ediablePost(e) {

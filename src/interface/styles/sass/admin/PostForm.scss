@@ -74,6 +74,16 @@
                background: $theme-color;
                font-size: 1em;
             }
+            .post-btn-cancel {
+               padding: 7px 12px;
+               border: none;
+               border-radius: 2px;
+               margin-left: 11px;
+               cursor: pointer;
+               color: rgb(255, 255, 255);
+               background: rgb(248, 101, 133);
+               font-size: 1em;
+            }
          }
       }
 

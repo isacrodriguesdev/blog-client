@@ -239,9 +239,9 @@ class CreatePost extends Component { // Componente administrativo
                               <i className="fas fa-plus"></i> Adicionar</button>
                         </Mount>
                         <Mount render={this.props.poster.id}>
-                           <button className="post-btn-add"
+                           <button className="post-btn-cancel"
                               onClick={this.cancelUpdate.bind(this)}>
-                              <i className="fas fa-plus"></i> Cancelar</button>
+                              <i className="fas fa-times"></i> Cancelar</button>
                         </Mount>
 
                         <Mount render={this.props.poster.id}>
